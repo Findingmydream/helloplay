@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello! My name is Kim jeong hee</title>
+    <link rel="stylesheet" href="hello.css">
+    <style>
+        /* 배경 애니메이션을 추가 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #f6ad55, #38b2ac, #2b6cb0);
+            background-size: 600% 600%;
+            animation: gradientAnimation 15s ease infinite;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* 배경 애니메이션 효과 */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            z-index: 10;
+            color: #fff; /* 글자 색을 흰색으로 */
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #fff;
+            color: #38b2ac;
+            padding: 14px 28px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #319795;
+            color: white;
+        }
+
+        .options-container {
+            margin-top: 30px;
+            display: none;
+        }
+
+        .options-container h2 {
+            font-size: 1.5rem;
+            color: #2b6cb0;
+        }
+
+        .options-container button {
+            background-color: #f6ad55;
+            color: white;
+            margin: 12px;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .options-container button:hover {
+            background-color: #dd6b20;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hello! My name is jeong hee</h1>
+        <p>환영합니다. 정희와 함께하는 즐거운 시간을 보내세요!</p>
+        <button onclick="showOptions()">클릭하세요!</button>
+    </div>
+
+    <div class="options-container" id="optionsContainer">
+        <h2>정희와 무엇을 할까요?</h2>
+        <button onclick="chooseActivity('게임하기')">정희랑 같이 게임하기</button>
+        <button onclick="chooseActivity('술먹기')">정희랑 같이 술먹기</button>
+        <button onclick="chooseActivity('애니 보기')">정희랑 같이 애니 보기</button>
+    </div>
+
+    <script>
+        function showOptions() {
+            document.querySelector('.options-container').style.display = 'block';
+        }
+
+        function chooseActivity(activity) {
+            alert(`정희와 같이 ${activity} 선택하셨습니다! 즐거운 시간 보내세요!`);
+        }
+    </script>
+</body>
+</html>
